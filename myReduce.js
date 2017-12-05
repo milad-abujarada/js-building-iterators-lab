@@ -4,7 +4,7 @@
 function myReduce(arr, callback, initialValue) {
 
 	let accumulator;
-	// if !(initialValue) {
+	if (!initialValue) {
 		let curr, index;
 		accumulator = arr[0];
 		for (let i = 0; i < arr.length -1; i++) {
@@ -13,12 +13,12 @@ function myReduce(arr, callback, initialValue) {
 			accumulator = callback(accumulator,  curr, index, arr);
 		}
 
-/*	} else{
+	} else{
 		accumulator = initialValue;
 		for (let i = 0; i < arr.length -1; i++) {
 		accumulator = callback(accumulator,  arr[0], i, arr);
 	}
-	}*/
+	}
 return accumulator;	
 }
 
