@@ -3,20 +3,23 @@
 
 function myReduce(arr, callback, initialValue) {
 
-if initialValue {
-let accumulator = arr[0], curr, index;
-for (let i = 0; i < arr.length -1; i++) {
-	curr = arr[i + 1];
-	accumulator = callback(accumulator,  curr, index = i+1, arr);
-}
-return accumulator;
-} else{
-	accumulator = initialValue;
-	for (let i = 0; i < arr.length -1; i++) {
-	accumulator = callback(accumulator,  arr[0], i, arr);
-}
-return accumulator;
-}
+	let accumulator;
+	// if !(initialValue) {
+		let curr, index;
+		accumulator = arr[0];
+		for (let i = 0; i < arr.length -1; i++) {
+			curr = arr[i + 1];
+			index = i+1;
+			accumulator = callback(accumulator,  curr, index, arr);
+		}
+
+/*	} else{
+		accumulator = initialValue;
+		for (let i = 0; i < arr.length -1; i++) {
+		accumulator = callback(accumulator,  arr[0], i, arr);
+	}
+	}*/
+return accumulator;	
 }
 
 /*
