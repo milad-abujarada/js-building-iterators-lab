@@ -1,10 +1,22 @@
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce for more details
 // Don't worry about initialValue at first. You can always add it in later.
 
-function myReduce(arr, callback) {
+function myReduce(arr, callback, initialValue) {
 
-//  CODE INSIDE HERE   //
-
+if initialValue {
+let accumulator = arr[0], curr, index;
+for (let i = 0; i < arr.length -1; i++) {
+	curr = arr[i + 1];
+	accumulator = callback(accumulator,  curr, index = i+1, arr);
+}
+return accumulator;
+} else{
+	accumulator = initialValue;
+	for (let i = 0; i < arr.length -1; i++) {
+	accumulator = callback(accumulator,  arr[0], i, arr);
+}
+return accumulator;
+}
 }
 
 /*
